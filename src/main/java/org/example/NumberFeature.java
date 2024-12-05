@@ -10,6 +10,21 @@ public class NumberFeature {
         inputNumber = in.nextInt();
         // 你的代码逻辑
 
+        int digit = 1;
+        int binaryValue = 0;
+        int multiplier = 1;
+        while (inputNumber > 0) {
+            int digitValue = inputNumber % 10;
+            if ((digitValue % 2 == 0 && digit % 2 == 0) || (digitValue % 2 == 1 && digit % 2 == 1)) {
+                binaryValue += multiplier;
+
+            }
+            inputNumber /= 10;
+            digit++;
+            multiplier *= 2;
+        }
+
+        result = binaryValue;
         System.out.println(result);
     }
 }
